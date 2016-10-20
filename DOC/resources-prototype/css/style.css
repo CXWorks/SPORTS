@@ -20,16 +20,23 @@ GLOBAL STYLES
 
 #mainBody #basic {
     width: 100%;
-    height:660px;
-    opacity: 0.8;
+    height:90%;
+    opacity: 1;
     /* Fallback for browsers that don't support the calc() function*/
 
 }
 #mainBody #basic .container{
     width:100%;
     height:100%;
-    background-image:url("../img/skyline-buildings-new-york-skyscrapers.jpg");
-    background-size: 100% 99%;
+    background-image:url("../img/t2.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.forcus.container{
+    width:100%;
+    height:100%;
+    background-image:url("../img/t2.jpg");
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 #mainBody #basic #main_header_content {
