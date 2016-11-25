@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -10,11 +11,13 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/',function (){
+	return view('welcome');
 });
 
+Route::get('/commentPage','Comment\CommentController@index');
+Route::get('/editComment','Comment\EditorController@index');
+Route::post('/editComment/upload','Comment\EditorController@uploadImage');
 Auth::routes();
 
-Route::get('/login&register', 'HomeController@index');
+

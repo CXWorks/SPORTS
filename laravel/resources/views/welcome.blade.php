@@ -34,7 +34,7 @@
 
                 <div align="right" id="log" >
                     <a href="apiPage/api.html"><button id="api_button"  class="button  button-block button-inverse button-rounded button-medium"  style="background-color:transparent ;  margin-top: -5px; ">API文档</button></a>
-                    <a href="login&register"><button id="sign_button"  class="button  button-block button-inverse button-rounded button-medium"  style="background-color:transparent ;  margin-top: -5px;"  >登录/注册</button></a>
+                    <a href="login"><button id="sign_button"  class="button  button-block button-inverse button-rounded button-medium"  style="background-color:transparent ;  margin-top: -5px;"  >登录/注册</button></a>
                 </div>
             </div>
 
@@ -50,7 +50,7 @@
                              <p>Your own sport manager</p>
                          </h1>
                         <div class="buttons inpage-scroll">
-                            <a class="btn" id="main_header_btn"  href="commentPage/commentPage.html"> <button class="button  button-block button-inverse button-rounded button-large" style="padding-top:1px;"  >进入应用</button></a>
+                            <a class="btn" id="main_header_btn"  href="commentPage"> <button class="button  button-block button-inverse button-rounded button-large" style="padding-top:1px;"  >进入应用</button></a>
                             </div>
                         <div class="row bottom-message-section">
                             <div class="col-lg-4 col-sm-4">

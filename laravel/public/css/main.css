@@ -14877,7 +14877,6 @@ input {
 }
 .top-bar .logo {
     position: relative;
-    top: 7px;
 }
 .top-bar .top-bar-right {
     text-align: right;
@@ -15615,6 +15614,11 @@ ul.main-menu > li > a,
 
 .main-content {
     padding-bottom: 30px;
+}
+
+.editor {
+    height: 600px;
+    width: inherit;
 }
 
 .row-widget {
@@ -20573,9 +20577,9 @@ ul.nav-categories > li > a {
     }
 }
 
-.page-auth .logo {
-    margin-bottom: 40px;
-}
+/*.page-auth .logo {*/
+    /*margin-bottom: 40px;*/
+/*}*/
 .page-auth .separator {
     margin: 30px auto;
     position: relative;
