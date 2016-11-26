@@ -23,10 +23,7 @@ class EditorController extends Controller
 
     public function publishComment(Request $request){
         $content=Input::get('content');
-        $comment=new Comment();
-        $comment->content=$content;
-        $comment->email=Auth::user()->email;
-        $comment->save();
+        Comment::create(['email'=>Auth::user()->email,'content'=>$content]);
         return redirect('/commentPage');
     }
 

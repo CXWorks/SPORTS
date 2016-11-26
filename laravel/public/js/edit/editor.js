@@ -17,10 +17,14 @@ function submitComment() {
     var html = editor.$txt.html();
     $.ajax({
         type: 'POST',
-        url: 'upload',
-        data: ,
-        success: success,
-        dataType: dataType
+        url: 'editComment/publish',
+        data: {
+            'content':html,
+            '_token': $('meta[name="csrf-token"]').attr('content')
+        },
+        success:function () {
+            window.location.replace('commentPage');
+        }
     });
 
 }
