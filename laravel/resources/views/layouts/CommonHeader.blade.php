@@ -63,9 +63,9 @@
                                         </a>
                                         <ul class="dropdown-menu" role="menu" id="down">
                                             <li>
-                                                <a href="#">
+                                                <a href="/">
                                                     <i class="fa fa-power-off"></i>
-                                                    <span class="text" id="logout"  onclick=javascript:Logout();>Logout</span>
+                                                    <span class="text" id="logout"  onclick='logout()'>Logout</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -163,6 +163,20 @@
 </body>
 <script src="{{asset('/')}}js/bootstrap.min.js"></script>
 <script src="{{asset('/')}}js/bootstrap-datetimepicker.min.js"></script>
+<script type="application/javascript">
+    function logout() {
+        $.ajax({
+            type: 'POST',
+            url: '/logout',
+            data: {
+                '_token': $('meta[name="csrf-token"]').attr('content')
+            },
+            success:function () {
+                window.location.replace('/');
+            }
+        });
+    }
+</script>
 @if($_PAGE=='editComment')
     <script src="{{asset('/')}}js/wangEditor.js"></script>
     <script src="{{asset('/')}}js/edit/editor.js"></script>
@@ -177,6 +191,10 @@
 @if($_PAGE=='sports')
     <script src="{{asset('/')}}js/echarts.common.min.js"></script>
     <script src="{{asset('/')}}js/person/sports.js"></script>
+@endif
+@if($_PAGE=='dataAnalyze')
+    <script src="{{asset('/')}}js/echarts.common.min.js"></script>
+    <script src="{{asset('/')}}js/analyze/record.js"></script>
 @endif
 @if($_PAGE=='createContest')
     <script src="{{asset('/')}}js/wangEditor.js"></script>

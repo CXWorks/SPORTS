@@ -21,3 +21,13 @@ $factory->define(SPORTS\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(SPORTS\Record::class,function (Faker\Generator $faker){
+    return [
+        'email' => 'cxworks@qq.com',
+        'minute' => $faker->numberBetween(10,120),
+        'sports' => $faker->country(),
+        'word' => $faker->text(),
+        'created_at' => $faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now')
+    ];
+});
