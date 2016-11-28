@@ -1,5 +1,5 @@
 /**
- * Created by st0001 on 2016/11/25.
+ * Created by cxworks on 16-11-28.
  */
 var editor = new wangEditor('editor');
 editor.config.uploadImgUrl = '/editComment/upload';
@@ -7,20 +7,21 @@ editor.config.uploadParams = {
     '_token': $('meta[name="csrf-token"]').attr('content')
 };
 editor.config.uploadImgFileName = 'photo';
-
+editor.config.menuFixed = false;
 editor.create();
 
-function submitComment() {
+function submitContest() {
     var html = editor.$txt.html();
     $.ajax({
         type: 'POST',
-        url: 'editComment/publish',
+        url: '/contest/create',
         data: {
+            'date':$("#datetimepicker12").data("datetimepicker").getDate(),
             'content':html,
             '_token': $('meta[name="csrf-token"]').attr('content')
         },
         success:function () {
-            window.location.replace('commentPage');
+            window.location.replace('showContest');
         }
     });
 

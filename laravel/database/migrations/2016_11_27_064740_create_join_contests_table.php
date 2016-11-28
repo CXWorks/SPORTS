@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePeopleTable extends Migration
+class CreateJoinContestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreatePeopleTable extends Migration
      */
     public function up()
     {
-        Schema::create('people', function (Blueprint $table) {
+        Schema::create('join_contests', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email',30);
-            $table->text('info')->nullable();
-            $table->text('body')->nullable();
+            $table->integer('contest_id');
+            $table->string('email');
+            $table->date('contest_date');
+
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreatePeopleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('people');
+        Schema::dropIfExists('join_contests');
     }
 }

@@ -36,6 +36,6 @@ class EditorController extends Controller
         $type='.'.explode('/',$img->mime())[1];
         $img_name=Auth::user()->name.time();
         $img->save('editorimg/'.$img_name.$type);
-        return ('editorimg/'.$img_name.$type);
+        return ('/editorimg/'.$img_name.$type);
     }
 }

@@ -12,6 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <!-- CSS -->
+    @if($_PAGE=='basic'||$_PAGE=='basic.other'||$_PAGE=='sports'||$_PAGE=='showContest')
+        <link href="{{asset('/')}}css/table.css" rel="stylesheet" type="text/css">
+    @endif
     <link rel="stylesheet" href="{{asset('/')}}css/preloader.css">
     <link href="{{asset('/')}}css/font-awesome.css" rel="stylesheet" type="text/css">
     <link href="{{asset('/')}}css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -19,10 +22,11 @@
     <link href="{{asset('/')}}css/main.css" rel="stylesheet" type="text/css">
     <link href="{{asset('/')}}css/style-switcher.css" rel="stylesheet" type="text/css">
     <link href="{{asset('/')}}css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
-    @if($_PAGE=='editComment')
+    @if($_PAGE=='editComment'||$_PAGE=='basic.modify'||$_PAGE=='createContest')
         <link href="{{asset('/')}}css/wangEditor.css" rel="stylesheet" type="text/css">
     @endif
 
+    <link href="{{asset('/')}}css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="{{asset('/')}}js/king-common.js"></script>
 
@@ -94,33 +98,33 @@
                             <!--main active-->
                             <!--             <li><a href="../commentPage/commentPage.html"><i class="fa fa-home fa-fw"></i><span class="text">首页</span></a></li>
                                         <!--my favor-->
-                            <li class="active"><a href="commentPage"><i class="fa fa-star fa-fw"></i><span class="text">动态</span></a></li>
+                            <li class="active"><a href="/commentPage"><i class="fa fa-star fa-fw"></i><span class="text">动态</span></a></li>
                             <li><a href="#" class="js-sub-menu-toggle"><i class="fa fa-list-ul fa-fw"></i><span class="text">个人信息</span>
                                     <i class="toggle-icon fa fa-angle-left"></i></a>
                                 <ul class="sub-menu ">
-                                    <li><a href="self/basic"><span class="text">个人基本信息</span></a></li>
-                                    <li><a href="self/sports"><span class="text">个人运动详细信息 <span class="badge element-bg-color-blue">New</span></span></a></li>
+                                    <li><a href="/self/basic"><span class="text">个人基本信息</span></a></li>
+                                    <li><a href="/self/sports"><span class="text">个人运动详细信息 <span class="badge element-bg-color-blue">New</span></span></a></li>
                                 </ul>
                             </li>
                             <li><a href="#" class="js-sub-menu-toggle"><i class="fa fa-line-chart fa-fw"></i><span class="text">组织信息</span>
                                     <i class="toggle-icon fa fa-angle-left"></i></a>
                                 <ul class="sub-menu ">
-                                    <li><a href="organization/orginfo"><span class="text">组织信息</span></a></li>
+                                    <li><a href="/organization/orginfo"><span class="text">组织信息</span></a></li>
                                 </ul>
                             </li>
                             <li><a href="#" class="js-sub-menu-toggle"><i class="fa fa-th-large fw"></i><span class="text">竞赛信息</span>
                                     <i class="toggle-icon fa fa-angle-left"></i></a>
                                 <ul class="sub-menu ">
-                                    <li><a href="contest/showContest"><span class="text">竞赛信息一览</span></a></li>
-                                    <li><a href="contest/createContest"><span class="text">发布竞赛信息</span></a></li>
+                                    <li><a href="/contest/showContest"><span class="text">竞赛信息一览</span></a></li>
+                                    <li><a href="/contest/createContest"><span class="text">发布竞赛信息</span></a></li>
                                 </ul>
                             </li>
                             <!--analysis&strategy-->
                             <li><a href="#" class="js-sub-menu-toggle"><i class="fa fa-file-text-o fw"></i><span class="text">分析 &amp; 建议</span>
                                     <i class="toggle-icon fa fa-angle-left"></i></a>
                                 <ul class="sub-menu ">
-                                    <li><a href="analyze/dataAnalyze"><span class="text">数据分析</span></a></li>
-                                    <li><a href="analyze/recomend"><span class="text">运动推荐</span></a></li>
+                                    <li><a href="/analyze/dataAnalyze"><span class="text">数据分析</span></a></li>
+                                    <li><a href="/analyze/recomend"><span class="text">运动推荐</span></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -157,8 +161,29 @@
     </div>
 
 </body>
+<script src="{{asset('/')}}js/bootstrap.min.js"></script>
+<script src="{{asset('/')}}js/bootstrap-datetimepicker.min.js"></script>
 @if($_PAGE=='editComment')
     <script src="{{asset('/')}}js/wangEditor.js"></script>
     <script src="{{asset('/')}}js/edit/editor.js"></script>
 @endif
+@if($_PAGE=='basic.modify')
+    <script src="{{asset('/')}}js/wangEditor.js"></script>
+    <script src="{{asset('/')}}js/person/basic.js"></script>
+@endif
+@if($_PAGE=='basic')
+    <script src="{{asset('/')}}js/person/friend.js"></script>
+    @endif
+@if($_PAGE=='sports')
+    <script src="{{asset('/')}}js/echarts.common.min.js"></script>
+    <script src="{{asset('/')}}js/person/sports.js"></script>
+@endif
+@if($_PAGE=='createContest')
+    <script src="{{asset('/')}}js/wangEditor.js"></script>
+    <script src="{{asset('/')}}js/contest/create.js"></script>
+@endif
+@if($_PAGE=='showContest')
+
+    <script src="{{asset('/')}}js/contest/show.js"></script>
+    @endif
 </html>

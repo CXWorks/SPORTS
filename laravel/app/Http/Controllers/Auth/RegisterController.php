@@ -2,6 +2,7 @@
 
 namespace SPORTS\Http\Controllers\Auth;
 
+use SPORTS\Person;
 use SPORTS\User;
 use Validator;
 use SPORTS\Http\Controllers\Controller;
@@ -62,6 +63,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        Person::create(['email'=>$data['email']]);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

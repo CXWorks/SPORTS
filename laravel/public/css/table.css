@@ -39,53 +39,6 @@ td{
 }
 /* demo styles */
 
-/*@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,300,700);*/
-/*body{*/
-
-  /*background: -webkit-linear-gradient(left, #3A5FCD, #00BFFF);*/
-  /*background: linear-gradient(to right, #3A5FCD, #00BFFF);*/
-
-  /*!*background-color: #F8F8FF;*!*/
-  /*!*background-image: "img/8.png";*!*/
-  /*width: 100%;*/
-  /*!*height: 1000px;*!*/
-  /*font-size: 10px;*/
-  /*color: #fff;*/
-
-  /*font-family: 'Roboto', sans-serif;*/
-/*}*/
-/*section{*/
-  /*margin: 50px;*/
-/*}*/
-/*.copy-right {*/
-  /*text-align: center;*/
-  /*color: #a8f6e7;*/
-  /*margin: 100px 0 0;*/
-  /*font-size: 12px;*/
-  /*font-weight: 300;*/
-  /*border-top: 1px solid  rgba(255,255,255,0.2);*/
-  /*padding: 20px 2%;*/
-  /*position: absolute;*/
-  /*left: 0;*/
-  /*bottom: 0;*/
-  /*width: 96%;*/
-
-  /*height: 100%;*/
-
-  /*text-shadow: 1px 0 1px rgba(0, 0, 0, 0.4);*/
-  /*text-decoration: none;*/
-/*}*/
-/*.copy-right:visited {*/
-  /*color: #a8f6e7;*/
-  /*text-decoration: none;*/
-/*}*/
-/*.copy-right:hover, .copy-right:focus, .copy-right:visited:hover, .copy-right:visited:focus {*/
-  /*text-decoration: underline;*/
-  /*color: #fff;*/
-/*}*/
-
-/*!* for custom scrollbar for webkit browser*!*/
-
 ::-webkit-scrollbar {
     width: 6px;
 }
@@ -96,13 +49,33 @@ td{
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }
 
-/**{margin:0px;padding:0px;}*/
-/*body{*/
-  /*!*background:#b1b1b1;*!*/
-  /*margin:0px;*/
-  /*padding:0px;*/
-  /*font-size:14px;*/
-  /*color:#000;*/
-/*}*/
-/*.tips{width:702px;margin:0 auto;line-height:24px;padding-top:10px;}*/
-/*.bredcolor{color:#fff;}*/
+.rTable {
+  display: table;
+  width: 100%;
+}
+.rTableRow {
+  display: table-row;
+}
+.rTableHeading {
+  display: table-header-group;
+  background-color: #ddd;
+}
+.rTableCell, .rTableHead {
+  display: table-cell;
+  padding: 3px 10px;
+  border: 1px solid #999999;
+}
+.rTableHeading {
+  display: table-header-group;
+  background-color: #ddd;
+  font-weight: bold;
+}
+.rTableFoot {
+  display: table-footer-group;
+  font-weight: bold;
+  background-color: #ddd;
+}
+.rTableBody {
+  display: table-row-group;
+}
+
