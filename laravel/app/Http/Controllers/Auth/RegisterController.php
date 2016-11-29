@@ -2,6 +2,7 @@
 
 namespace SPORTS\Http\Controllers\Auth;
 
+use Illuminate\Support\Facades\Input;
 use SPORTS\Person;
 use SPORTS\User;
 use Validator;
@@ -52,6 +53,8 @@ class RegisterController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'pres' => Input::get('preference'),
+            'pres' => 'size:1'
         ]);
     }
 
@@ -63,7 +66,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        Person::create(['email'=>$data['email']]);
+        $pres=Input::get('preference');
+        $arr=array();
+        for ($i=0;$i<5;$i++){
+            if (array_key_exists($i,$pres))
+                array_push($arr,true);
+            else
+                array_push($arr,false);
+        }
+        Person::create(['email'=>$data['email'],'run'=>$arr[0],'swim'=>$arr[1],'basketball'=>$arr[2],'football'=>$arr[3],'boxing'=>$arr[4]]);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

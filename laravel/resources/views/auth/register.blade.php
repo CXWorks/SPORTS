@@ -61,6 +61,19 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="preference[]" class="col-md-4 control-label">Tell me what you love</label>
+
+                            <div class="col-md-6">
+                                <label for="check1"><input id="check1" type="checkbox" class="checkbox" name="preference[0]" >Run</label>
+                                <label for="check2"><input id="check2" type="checkbox" class="checkbox" name="preference[1]" >Swim</label>
+                                <label for="check3"><input id="check3" type="checkbox" class="checkbox" name="preference[2]" >BasketBall</label>
+                                <label for="check4"><input id="check4" type="checkbox" class="checkbox" name="preference[3]" >FootBall</label>
+                                <label for="check5"><input id="check5" type="checkbox" class="checkbox" name="preference[4]" >Boxing</label>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     Register

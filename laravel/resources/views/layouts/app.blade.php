@@ -8,12 +8,14 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>SPORTS</title>
 
     <!-- Styles -->
+    <link href="{{asset('/')}}css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('/')}}css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="{{asset('/')}}css/app.css" rel="stylesheet">
-
     <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
@@ -36,7 +38,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        SPORTS
                     </a>
                 </div>
 
@@ -82,6 +84,7 @@
     </div>
 
     <!-- Scripts -->
+    {{--<script src="{{asset('/')}}js/bootstrap.min.js"></script>--}}
     <script src="{{asset('/')}}js/app.js"></script>
 </body>
 </html>

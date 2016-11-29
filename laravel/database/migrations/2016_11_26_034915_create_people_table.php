@@ -16,6 +16,11 @@ class CreatePeopleTable extends Migration
         Schema::create('people', function (Blueprint $table) {
             $table->increments('id');
             $table->string('email',30);
+            $table->boolean('run')->default(false);
+            $table->boolean('swim')->default(false);
+            $table->boolean('basketball')->default(false);
+            $table->boolean('football')->default(false);
+            $table->boolean('boxing')->default(false);
             $table->text('info')->nullable();
             $table->text('body')->nullable();
             $table->timestamps();

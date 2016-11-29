@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<!--[if IE 9 ]><html class="ie ie9" lang="en" class="no-js"> [endif] -->
-<!--[if !(IE)]>
-<!-->
 <html lang="en" class="no-js" >
 <!--<![endif]-->
 
@@ -18,7 +15,7 @@
     <link rel="stylesheet" href="{{asset('/')}}css/preloader.css">
     <link href="{{asset('/')}}css/font-awesome.css" rel="stylesheet" type="text/css">
     <link href="{{asset('/')}}css/bootstrap.min.css" rel="stylesheet" type="text/css">
-
+    <link href="{{asset('/')}}css/awesome-bootstrap-checkbox.css" type="text/css">
     <link href="{{asset('/')}}css/main.css" rel="stylesheet" type="text/css">
     <link href="{{asset('/')}}css/style-switcher.css" rel="stylesheet" type="text/css">
     <link href="{{asset('/')}}css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
@@ -68,6 +65,12 @@
                                                     <span class="text" id="logout"  onclick='logout()'>Logout</span>
                                                 </a>
                                             </li>
+                                            <li>
+                                                <a href="/">
+                                                    <i class="fa fa-power-off"></i>
+                                                    <span class="text" id="logout"  onclick='logout()'>Logout</span>
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -104,12 +107,6 @@
                                 <ul class="sub-menu ">
                                     <li><a href="/self/basic"><span class="text">个人基本信息</span></a></li>
                                     <li><a href="/self/sports"><span class="text">个人运动详细信息 <span class="badge element-bg-color-blue">New</span></span></a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#" class="js-sub-menu-toggle"><i class="fa fa-line-chart fa-fw"></i><span class="text">组织信息</span>
-                                    <i class="toggle-icon fa fa-angle-left"></i></a>
-                                <ul class="sub-menu ">
-                                    <li><a href="/organization/orginfo"><span class="text">组织信息</span></a></li>
                                 </ul>
                             </li>
                             <li><a href="#" class="js-sub-menu-toggle"><i class="fa fa-th-large fw"></i><span class="text">竞赛信息</span>

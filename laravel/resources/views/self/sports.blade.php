@@ -26,14 +26,17 @@
                     <div class="widget-content" >
                         <div class="rTable">
                             <div class="rTableRow">
-                                <div class="rTableHead"><strong>Sports</strong></div>
-                                <div class="rTableHead"><span style="font-weight: bold;">Time</span></div>
-                                <div class="rTableHead"><strong>Details</strong></div>
+                                <div class="rTableHead" style="background-color: lavender"><strong>Sports</strong></div>
+                                <div class="rTableHead" style="background-color: lavenderblush"><span style="font-weight: bold;">Time</span></div>
+                                <div class="rTableHead" style="background-color: blanchedalmond"><span style="font-weight: bold;">Date</span></div>
+                                <div class="rTableHead" style="background-color: lightgrey"><strong>Details</strong></div>
                             </div>
                             @foreach($records as $record)
                                 <div class="rTableRow">
                                     <div class="rTableCell">{{$record->sports}}</div>
+
                                     <div class="rTableCell">{{$record->minute}} mins</div>
+                                    <div class="rTableCell">{{$record->created_at->format('Y-m-d')}}</div>
                                     <div class="rTableCell">{{$record->word}}</div>
                                 </div>
                             @endforeach
