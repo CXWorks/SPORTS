@@ -46,6 +46,7 @@ class ContestController extends Controller
 
     public function joinContest(){
         $id=Input::get('id');
+        Contest::where('id',$id)->increment('people');
         $contest=Contest::where('id',$id)->first();
         JoinContest::create(['contest_id'=>$id,'email'=>Auth::user()->email,'contest_date'=>$contest->date]);
         return 'ok';

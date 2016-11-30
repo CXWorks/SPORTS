@@ -77,6 +77,7 @@
                        <h5>Organizer <a href="/info?email={{$contest->pub_email}}" ><strong>{{$contest->publisher}}</strong></a></h5>
                         <h5>E-mail <a href="mailto:{{$contest->pub_email}}">{{$contest->pub_email}}</a></h5>
                         <h5>Date <strong>{{$contest->date}}</strong></h5>
+                                <h5>People {{$contest->people}}</h5>
                             </div>
                             <div class="col-md-9">
                                 <div id="map{{$contest->id}}" style="height: 300px"></div>
