@@ -6,7 +6,9 @@
 
         <!-- main -->
         <div class="content">
-
+            <script type="application/javascript">
+                var rank={{$rank}};
+            </script>
             <div class="main-header">
                 <h2>个人运动</h2>
                 <em>the least information</em>

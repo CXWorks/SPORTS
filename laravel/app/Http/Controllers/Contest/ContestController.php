@@ -10,6 +10,7 @@ use SPORTS\Contest;
 use SPORTS\Http\Requests;
 use SPORTS\Http\Controllers\Controller;
 use SPORTS\JoinContest;
+use SPORTS\Record;
 
 class ContestController extends Controller
 {
@@ -19,6 +20,12 @@ class ContestController extends Controller
         $this->middleware('auth');
     }
     public function create(){
+        $rank=round(Record::where('email',Auth::user()->email)->count()/3);
+        if ($rank<15){
+            $contests=Contest::where('state','running')->orderBy('date','desc')->get();
+            $joins=JoinContest::where('email',Auth::user()->email)->get();
+            return view('contest/showContest',['_PAGE'=>'showContest','username'=>Auth::user()->name,'contests'=>$contests,'joins'=>$joins,'warn'=>true,'rank'=>$rank]);
+        }
         return view('contest/createContest',['_PAGE'=>'createContest','username'=>Auth::user()->name]);
     }
 
@@ -35,7 +42,7 @@ class ContestController extends Controller
     public function showContest(){
         $contests=Contest::where('state','running')->orderBy('date','desc')->get();
         $joins=JoinContest::where('email',Auth::user()->email)->get();
-        return view('contest/showContest',['_PAGE'=>'showContest','username'=>Auth::user()->name,'contests'=>$contests,'joins'=>$joins]);
+        return view('contest/showContest',['_PAGE'=>'showContest','username'=>Auth::user()->name,'contests'=>$contests,'joins'=>$joins,'warn'=>false,'rank'=>0]);
     }
 
     public function finishContest(){
@@ -50,5 +57,28 @@ class ContestController extends Controller
         $contest=Contest::where('id',$id)->first();
         JoinContest::create(['contest_id'=>$id,'email'=>Auth::user()->email,'contest_date'=>$contest->date]);
         return 'ok';
+    }
+
+    public function deleteContest(){
+        $id=Input::get('id');
+        JoinContest::where('contest_id',$id)->delete();
+        Contest::where('id',$id)->delete();
+        return 'ok';
+    }
+
+    public function modifyContest(){
+        $id=Input::get('id');
+        $date=Input::get('date');
+        $word=Input::get('content');
+        $x=Input::get('locationX');
+        $y=Input::get('locationY');
+        Contest::where('id',$id)->update(['date'=>$date,'locationX'=>$x,'locationY'=>$y,'description'=>$word]);
+        return 'ok';
+    }
+
+    public function modify(){
+        $id=Input::get('id');
+        $con=Contest::where('id',$id)->first();
+        return view('contest/modifyContest',['_PAGE'=>'modifyContest','username'=>Auth::user()->name,'contest'=>$con]);
     }
 }

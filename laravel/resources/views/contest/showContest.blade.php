@@ -2,7 +2,11 @@
 @section('content')
     <!-- content-wrapper -->
     <div class="col-md-10 content-wrapper">
-
+    <script type="application/javascript">
+        if({{$warn}}){
+            alert('您的等级为{{$rank}},未满15级，不可以发布赛事');
+        }
+    </script>
 
         <!-- main -->
         <div class="content">
@@ -112,6 +116,8 @@
                         </br>
                         @if($username==$contest->publisher)
                             <button type="button" class="btn btn-success" onclick="finsihContest({{$contest->id}})">Finish</button>
+                            <button type="button" class="btn btn-warning" onclick="window.location.href='/contest/modify?id={{$contest->id}}';">Modify</button>
+                            <button type="button" class="btn btn-danger" onclick="deleteContest({{$contest->id}})">Delete</button>
                             @elseif($joins->where('contest_id',$contest->id)->isEmpty())
                             <button type="button" class="btn btn-primary" onclick="joinContest({{$contest->id}})">Join</button>
                             @endif

@@ -15,7 +15,19 @@ function finsihContest(id) {
         }
     });
 }
-
+function deleteContest(id) {
+    $.ajax({
+        type: 'POST',
+        url: '/contest/delete',
+        data: {
+            'id':id,
+            '_token': $('meta[name="csrf-token"]').attr('content')
+        },
+        success:function () {
+            window.location.replace('showContest');
+        }
+    });
+}
 function joinContest(id) {
     $.ajax({
         type: 'POST',

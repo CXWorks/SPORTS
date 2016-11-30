@@ -55,17 +55,17 @@
                         <div class="row bottom-message-section">
                             <div class="col-lg-4 col-sm-4">
                                 <div class="short-text">
-                                    <i class="fa fa-bookmark-o"></i><a href="self/sports.html" style="color:rgba(255,255,255,0.7);">所有运动数据</a>
+                                    <i class="fa fa-bookmark-o"></i><a href="self/sports" style="color:rgba(255,255,255,0.7);">所有运动数据</a>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-sm-4">
                                 <div class="short-text">
-                                    <i class="fa fa-bookmark-o"></i><a href="contest/showContest.html" style="color:rgba(255,255,255,0.7);"> 所有竞赛信息</a>
+                                    <i class="fa fa-bookmark-o"></i><a href="contest/showContest" style="color:rgba(255,255,255,0.7);"> 所有竞赛信息</a>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-sm-4">
                                 <div class="short-text">
-                                    <i class="fa fa-bookmark-o"></i><a href="analyze/dataAnalyze.html" style="color:rgba(255,255,255,0.7);"> 身体健康分析</a>
+                                    <i class="fa fa-bookmark-o"></i><a href="analyze/dataAnalyze" style="color:rgba(255,255,255,0.7);"> 身体健康分析</a>
                                 </div>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                         <div class="row">
                             <!-- FIRST FOCUS BOXES -->
                             <div class="col-lg-4 col-sm-4 focus-box red wow fadeInLeft animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
-                                <a href="self/sports.html" style="color:#555">
+                                <a href="self/sports" style="color:#555">
                                     <div class="service-icon">
                                      <i class="fa fa-5x fa-bar-chart-o " style="margin-top:28px; color:#e96656"></i> <!-- FOCUS ICON-->
                                     </div>
@@ -104,7 +104,7 @@
                             </div>
                             <!-- / END FIRST FOCUS BOX. Other boxes has same format -->
                             <div class="col-lg-4 col-sm-4 focus-box green wow fadeInRight animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
-                                <a href="contest/showContest.html" style="color:#555">
+                                <a href="contest/showContest" style="color:#555">
                                     <div class="service-icon">
                                         <span class="fa fa-5x fa-th-large"  style="margin-top:28px; color:#34d293"></span>
                                     </div>
@@ -115,7 +115,7 @@
                             </div>
 
                            <div class="col-lg-4 col-sm-4 focus-box blue wow fadeInRight animated" href="dataAnalysePage/dataAnalysePage.html"; data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
-                               <a href="analyze/dataAnalyze.html" style="color:#555">
+                               <a href="analyze/dataAnalyze" style="color:#555">
                                    <div class="service-icon">
                                         <i class="fa fa-5x fa-file-text-o"  style="margin-top:28px; color:#3ab0e2"></i>
                                     </div>
@@ -185,7 +185,7 @@
                                         <i class="fa fa-file-text-o"></i>
                                     </div>
                                     <div class="stat-text">
-                                        <h3 class="white-text yellow-border-bottom" >infinite</h3>
+                                        <h3 class="white-text yellow-border-bottom" >100+</h3>
                                         <h6>Friends' share</h6>
                                     </div>
                                 </div>

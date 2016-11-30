@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="shortcut icon" href="{{asset('/')}}favicon.ico">
     <!-- CSS -->
     {{--@if($_PAGE=='basic'||$_PAGE=='basic.other'||$_PAGE=='sports'||$_PAGE=='showContest')--}}
         {{--<link href="{{asset('/')}}css/table.css" rel="stylesheet" type="text/css">--}}
@@ -20,7 +21,7 @@
     <link href="{{asset('/')}}css/style-switcher.css" rel="stylesheet" type="text/css">
     <link href="{{asset('/')}}css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
     <link href=" https://cdn.datatables.net/autofill/2.1.2/css/autoFill.dataTables.min.css" type="text/css">
-    @if($_PAGE=='editComment'||$_PAGE=='basic.modify'||$_PAGE=='createContest')
+    @if($_PAGE=='editComment'||$_PAGE=='basic.modify'||$_PAGE=='createContest'||$_PAGE=='modifyContest')
         <link href="{{asset('/')}}css/wangEditor.css" rel="stylesheet" type="text/css">
     @endif
     <link href="{{asset('/')}}css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
@@ -29,10 +30,13 @@
     <script src="{{asset('/')}}js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/autofill/2.1.2/js/dataTables.autoFill.min.js"></script>
     {{--<style type="text/css">--}}
+    <script src="{{asset('/')}}js/bootstrap.min.js"></script>
+    <script src="{{asset('/')}}js/bootstrap-datetimepicker.min.js"></script>
         {{--#allmap {width: 25%;height: 25%;overflow: hidden;margin:0;font-family:"微软雅黑";}--}}
     {{--</style>--}}
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=EQRCjCyVfZ2rzY9CeM8GqVZe1cR1c2bv"></script>
-    {{--<script src="http://api.map.baidu.com/library/MarkerManager/1.2/src/MarkerManager_min.js"></script>--}}
+    <script src="http://api.map.baidu.com/library/RichMarker/1.2/src/RichMarker_min.js"></script>
+
     <script src="http://api.map.baidu.com/library/MarkerTool/1.2/src/MarkerTool_min.js"></script>
 
 </head>
@@ -166,8 +170,7 @@
     </div>
 
 </body>
-<script src="{{asset('/')}}js/bootstrap.min.js"></script>
-<script src="{{asset('/')}}js/bootstrap-datetimepicker.min.js"></script>
+
 <script type="application/javascript">
     function logout() {
         $.ajax({
@@ -210,5 +213,9 @@
 
     <script src="{{asset('/')}}js/contest/show.js"></script>
     @endif
-
+@if($_PAGE=='modifyContest')
+    <script src="{{asset('/')}}js/wangEditor.js"></script>
+    <script src="{{asset('/')}}js/contest/modify.js"></script>
+    <script type="application/javascript" src="{{asset('/')}}js/baiduMap.js"></script>
+@endif
 </html>

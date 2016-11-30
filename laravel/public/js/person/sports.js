@@ -123,7 +123,7 @@ option = {
                 }
             }
         },
-        data: [36]
+        data: [rank]
     }]
 }
 var myChart = echarts.init(document.getElementById('main3'));

@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>SPORTS</title>
-
+    <link rel="shortcut icon" href="{{asset('/')}}favicon.ico">
     <!-- Styles -->
     <link href="{{asset('/')}}css/font-awesome.css" rel="stylesheet" type="text/css">
     <link href="{{asset('/')}}css/bootstrap.min.css" rel="stylesheet" type="text/css">

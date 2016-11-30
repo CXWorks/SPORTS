@@ -13,6 +13,24 @@
                 <em>self information</em>
             </div>
             <div class="main-content">
+                <div class="row">
+                    @if($person->run)
+                        <button class="col-md-1 btn btn-info">跑步</button>
+                    @endif
+                    @if($person->swim)
+                            <button class="col-md-1 btn btn-primary">游泳</button>
+                        @endif
+                        @if($person->basketball)
+                            <button class="col-md-1 btn btn-success">篮球</button>
+                        @endif
+                        @if($person->football)
+                            <button class="col-md-1 btn btn-warning">足球</button>
+                        @endif
+                        @if($person->boxing)
+                            <button class="col-md-1 btn btn-danger">拳击</button>
+                        @endif
+                </div>
+            </br>
                 <div class="widget widget-table">
                     <div class="widget-header" ng-controller="myFavorCtrl">
                         <h3><i class="fa fa-group"></i>个人基本信息</h3> <em>- List of concerned SPORTSs</em>
@@ -101,7 +119,7 @@
 
                             </input>
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button" onclick="addNewFriend()">Add!</button>
+                                    <button class="btn btn-info" type="button" onclick="addNewFriend()">Add!</button>
                                 </span>
 
                             </div>

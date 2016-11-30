@@ -24,6 +24,8 @@ Route::get('/self/sports','User\SportsController@index');
 Route::get('/contest/createContest','Contest\ContestController@create');
 Route::get('/contest/showContest','Contest\ContestController@showContest');
 Route::get('/analyze/dataAnalyze','analyze\DataController@dataAnalyze');
+Route::get('/contest/modify','Contest\ContestController@modify');
+Route::get('/analyze/recomend','analyze\DataController@contestRecommend');
 
 
 Route::post('/editComment/upload','Comment\EditorController@uploadImage');
@@ -33,7 +35,12 @@ Route::post('/self/basic/add','User\UserController@add');
 Route::post('/contest/create','Contest\ContestController@newContest');
 Route::post('/contest/finish','Contest\ContestController@finishContest');
 Route::post('/contest/join','Contest\ContestController@joinContest');
+Route::post('/contest/modify','Contest\ContestController@modifyContest');
+Route::post('/contest/delete','Contest\ContestController@deleteContest');
 
 Auth::routes();
+Route::resource('records', 'RecordController',['only'=>[
+    'show','store','destroy'
+]]);
 
 
