@@ -70,18 +70,29 @@
                     </div>
                     <div class="widget-content" >
                         <div class="rTable">
-                            <div class="rTableRow">
-                                <div class="rTableHead"><strong>Name</strong></div>
-                                <div class="rTableHead"><span style="font-weight: bold;">E-mail</span></div>
-                                <div class="rTableHead"><strong>Begin Date</strong></div>
-                            </div>
-                            @foreach($friends as $friend)
-                            <div class="rTableRow">
-                                <div class="rTableCell"><a href="/info?email={{$friend->temail}}">{{$friend->tname }}</a> </div>
-                                <div class="rTableCell"><a href="mailto:{{$friend->temail}}">{{$friend->temail}}</a></div>
-                                <div class="rTableCell">{{$friend->created_at}}</div>
-                            </div>
-                            @endforeach
+                            <table id="table_id" class="display" >
+                                <thead>
+                                <tr>
+                                    <th style="color: black">Name</th>
+                                    <th style="color: black">E-mail</th>
+                                    <th style="color: black">Begin Date</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($friends as $friend)
+                                    <tr>
+                                        <td style="color: black"><a href="/info?email={{$friend->temail}}">{{$friend->tname }}</a> </td>
+                                        <td style="color: black"><a href="mailto:{{$friend->temail}}">{{$friend->temail}}</a></td>
+                                        <td style="color: black">{{$friend->created_at}}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                            <script type="application/javascript">
+                                $('#table_id').DataTable({
+                                    autoFill:true
+                                });
+                            </script>
                                     @if($_PAGE=='basic')
                             </br>
                             </br>

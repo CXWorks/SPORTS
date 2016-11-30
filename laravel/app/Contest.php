@@ -8,5 +8,5 @@ class Contest extends Model
 {
     //
     protected $table='contests';
-    protected $fillable=['publisher','pub_email','state','date','description'];
+    protected $fillable=['publisher','pub_email','state','date','locationX','locationY','description'];
 }

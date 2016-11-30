@@ -19,6 +19,9 @@ class CreateContestsTable extends Migration
             $table->string('pub_email');
             $table->string('state');
             $table->date('date');
+            $table->double('locationX');
+            $table->double('locationY');
+            $table->integer('people')->default(0);
             $table->text('description');
             $table->timestamps();
         });

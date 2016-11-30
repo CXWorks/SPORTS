@@ -23,25 +23,35 @@
                             <a href="#" title="Remove" class="btn-borderless btn-remove"><i class="fa fa-times"></i></a>
                         </div>
                     </div>
+
                     <div class="widget-content" >
-                        <div class="rTable">
-                            <div class="rTableRow">
-                                <div class="rTableHead" style="background-color: lavender"><strong>Sports</strong></div>
-                                <div class="rTableHead" style="background-color: lavenderblush"><span style="font-weight: bold;">Time</span></div>
-                                <div class="rTableHead" style="background-color: blanchedalmond"><span style="font-weight: bold;">Date</span></div>
-                                <div class="rTableHead" style="background-color: lightgrey"><strong>Details</strong></div>
-                            </div>
+                        <table id="table_id" class="display" >
+                            <thead>
+                            <tr>
+                                <th style="color: black">Sports</th>
+                                <th style="color: black">Time</th>
+                                <th style="color: black">Date</th>
+                                <th style="color: black">Details</th>
+                            </tr>
+                            </thead>
+                            <tbody>
                             @foreach($records as $record)
-                                <div class="rTableRow">
-                                    <div class="rTableCell">{{$record->sports}}</div>
-
-                                    <div class="rTableCell">{{$record->minute}} mins</div>
-                                    <div class="rTableCell">{{$record->created_at->format('Y-m-d')}}</div>
-                                    <div class="rTableCell">{{$record->word}}</div>
-                                </div>
+                            <tr>
+                                <td style="color: black">{{$record->sports}}</td>
+                                <td style="color: black">{{$record->minute}} mins</td>
+                                <td style="color: black">{{$record->created_at->format('Y-m-d')}}</td>
+                                <td style="color: black">{{$record->word}}</td>
+                            </tr>
                             @endforeach
+                            </tbody>
+                        </table>
+                        <script type="application/javascript">
+                            $('#table_id').DataTable({
+                                autoFill:true
+                            });
+                        </script>
 
-                        </div>
+
                     </div>
                 </div>
                 <!-- END WIDGET TICKET TABLE -->
@@ -60,21 +70,30 @@
                         </div>
                     </div>
                     <div class="widget-content" >
-                        <div class="rTable">
-                            <div class="rTableRow">
-                                <div class="rTableHead"><strong>contest_id</strong></div>
-                                <div class="rTableHead"><span style="font-weight: bold;">Date</span></div>
-                                <div class="rTableHead"><strong>JoinDate</strong></div>
-                            </div>
+                        <table id="table_id2" class="display" >
+                            <thead>
+                            <tr>
+                                <th style="color: black">contest_id</th>
+                                <th style="color: black">Date</th>
+                                <th style="color: black">JoinDate</th>
+                            </tr>
+                            </thead>
+                            <tbody>
                             @foreach($contests as $contest)
-                                <div class="rTableRow">
-                                    <div class="rTableCell">{{$contest->contest_id}}</div>
-                                    <div class="rTableCell">{{$contest->contest_date}}</div>
-                                    <div class="rTableCell">{{$contest->created_at}}</div>
-                                </div>
+                                <tr>
+                                    <td style="color: black">{{$contest->contest_id}}</td>
+                                    <td style="color: black">{{$contest->contest_date->format('Y-m-d')}}</td>
+                                    <td style="color: black">{{$contest->created_at->format('Y-m-d')}}</td>
+                                </tr>
                             @endforeach
+                            </tbody>
+                        </table>
+                        <script type="application/javascript">
+                            $('#table_id2').DataTable({
+                                autoFill:true
+                            });
+                        </script>
 
-                        </div>
                     </div>
                 </div>
                 <!-- END WIDGET TICKET TABLE -->

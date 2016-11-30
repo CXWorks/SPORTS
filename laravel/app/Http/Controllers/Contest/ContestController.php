@@ -25,8 +25,10 @@ class ContestController extends Controller
     public function newContest(Request $request){
         $date=Input::get('date');
         $word=Input::get('content');
+        $x=Input::get('locationX');
+        $y=Input::get('locationY');
         Contest::create(['publisher'=>Auth::user()->name,'pub_email'=>Auth::user()->email,'state'=>'running',
-            'date'=>$date,'description'=>$word]);
+            'date'=>$date,'locationX'=>$x,'locationY'=>$y,'description'=>$word]);
         return 'ok';
     }
 

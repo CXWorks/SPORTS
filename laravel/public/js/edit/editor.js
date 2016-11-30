@@ -1,6 +1,7 @@
 /**
  * Created by st0001 on 2016/11/25.
  */
+wangEditor.config.mapAk = 'EQRCjCyVfZ2rzY9CeM8GqVZe1cR1c2bv';
 var editor = new wangEditor('editor');
 editor.config.uploadImgUrl = '/editComment/upload';
 editor.config.uploadParams = {
