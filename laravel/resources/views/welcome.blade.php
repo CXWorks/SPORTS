@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>SPORTS - 运动社交平台</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- CUSTOM STYLES -->
     <link rel="stylesheet" href="{{ asset('/') }}css/button.css">
     <link rel="stylesheet" href="{{ asset('/') }}css/bootstrap.min.css">
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('/') }}css/style.css">
     <link rel="stylesheet" href="{{ asset('/') }}css/login.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic|Montserrat:700,400|Homemade+Apple' rel='stylesheet' type='text/css'>
-
+    <link rel="stylesheet" href="{{asset('/')}}css/share.css" type="text/css">
 
 </head>
 <body >
@@ -33,7 +33,7 @@
                 <!--<a id="log_reg_btn" class="btn"> <button   style="marginRight:10px" class="button  button-block button-inverse button-rounded button-jumbo"  onclick=javascript:enterLog_Reg()   >登录/注册</button></a>-->
 
                 <div align="right" id="log" >
-                    <a href="apiPage/api.html"><button id="api_button"  class="button  button-block button-inverse button-rounded button-medium"  style="background-color:transparent ;  margin-top: -5px; ">API文档</button></a>
+                    {{--<a href="apiPage/api.html"><button id="api_button"  class="button  button-block button-inverse button-rounded button-medium"  style="background-color:transparent ;  margin-top: -5px; ">API文档</button></a>--}}
                     <a href="login"><button id="sign_button"  class="button  button-block button-inverse button-rounded button-medium"  style="background-color:transparent ;  margin-top: -5px;"  >登录/注册</button></a>
                 </div>
             </div>
@@ -346,21 +346,27 @@
             </section>
 
             <footer>
-                <div id="footer" class="footer" >
+                <div id="footer" class="footer row" >
                     <div class="g-ft" style="text-align: center ; padding-top: 10px;">
-                        <span class="m-ft2" >
+                        <span class="m-ft2 col-md-6" >
                             <a target="_blank"  rel="nofollow" href="javascript:void(0);" style="color: #EBEBEB" id="aboutUS"><i  class="fa fa-user" style="margin-right: 2px;margin-top: -5px;"></i>关于我们</a>
                              <span style="margin-left:20px;"><i  class="fa fa-envelope" style="margin-right: 1px;margin-top: -5px;"></i> 联系我们：<a href="mailto:141250018@smail.nju.edu.cn" style="color: #fff;">141250018@smail.nju.edu.cn</a></span>
                             <span>&nbsp;|</span>
                     <!--     <a target="_blank" rel="nofollow" href="javascript:void(0);"  style="color: #EBEBEB">官方博客</a>-->
                         </span>
 
-                        <span class="m-ft1" style="color:#cecece">cxworks版权所有　&copy;2016-2017　
-                            <a rel="nofollow" target="_blank" href="http://www.miibeian.gov.cn/" style="position:relative;color: #FFF;">
-                            <!--   <img src="http://l.bst.126.net/rsc/img/icon-police.png" style="width:14px;height:16px;position:absolute;left:0;top:0;" />
-                            <span style="margin-left:18px;">京ICP备11008151号</span> -->
-                            </a>
+                        <span class="m-ft1 col-md-6" style="color:#cecece">
+                            cxworks版权所有　&copy;2016-2017　
+                            <i class="share share-github col-md-1"></i>
+                            <i class="share share-gmail col-md-1"></i>
+                            <i class="share share-linkedin col-md-1"></i>
+                            <i class="share share-stackoverflow col-md-1"></i>
+                            <i class="share share-tumblr col-md-1"></i>
+                            <i class="share share-twitter col-md-1"></i>
+
                         </span>
+
+
                     </div>
                 </div>
             </footer>

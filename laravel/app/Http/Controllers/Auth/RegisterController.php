@@ -75,6 +75,9 @@ class RegisterController extends Controller
                 array_push($arr,false);
         }
         Person::create(['email'=>$data['email'],'run'=>$arr[0],'swim'=>$arr[1],'basketball'=>$arr[2],'football'=>$arr[3],'boxing'=>$arr[4]]);
+        if (!preg_match("/^[a-zA-Z0-9]*$/",Input::get('name'))){
+            abort(500);
+        }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

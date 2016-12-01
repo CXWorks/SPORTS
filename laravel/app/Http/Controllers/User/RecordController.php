@@ -24,6 +24,7 @@ class RecordController extends Controller
     public function index()
     {
         //
+        return response()->json(Record::where('email',Auth::user()->email)->get());
     }
 
     /**
@@ -34,6 +35,7 @@ class RecordController extends Controller
     public function create()
     {
         //
+
     }
 
     /**

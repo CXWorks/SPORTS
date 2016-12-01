@@ -38,6 +38,7 @@
     <script src="http://api.map.baidu.com/library/RichMarker/1.2/src/RichMarker_min.js"></script>
 
     <script src="http://api.map.baidu.com/library/MarkerTool/1.2/src/MarkerTool_min.js"></script>
+    <script src="{{asset('/')}}js/jquery.cookie.js"></script>
 
 </head>
 
@@ -74,15 +75,15 @@
                                             <li>
                                                 <a href="/">
                                                     <i class="fa fa-power-off"></i>
-                                                    <span class="text" id="logout"  onclick='logout()'>Logout</span>
+                                                    <span class="text" id="logout"  onclick="window.location.href='/logout';">Logout</span>
                                                 </a>
                                             </li>
-                                            <li>
-                                                <a href="/">
-                                                    <i class="fa fa-power-off"></i>
-                                                    <span class="text" id="logout"  onclick='logout()'>Logout</span>
-                                                </a>
-                                            </li>
+                                            {{--<li>--}}
+                                                {{--<a href="/">--}}
+                                                    {{--<i class="fa fa-power-off"></i>--}}
+                                                    {{--<span class="text" id="logout"  onclick='logout()'>Logout</span>--}}
+                                                {{--</a>--}}
+                                            {{--</li>--}}
                                         </ul>
                                     </div>
                                 </div>
@@ -104,7 +105,7 @@
     <!-- BOTTOM: LEFT NAV AND RIGHT MAIN CONTENT -->
     <div class="bottom">
         <div class="container" >
-            <div class="row" >
+            <div class="row bgg" >
                 <!-- left sidebar -->
                 <div class="col-md-2 left-sidebar" >
                     <!-- main-homePage -->
@@ -173,13 +174,15 @@
 
 <script type="application/javascript">
     function logout() {
+        for (var it in $.cookie()) $.removeCookie(it);
         $.ajax({
             type: 'POST',
             url: '/logout',
             data: {
                 '_token': $('meta[name="csrf-token"]').attr('content')
             },
-            success:function () {
+            success:function (data) {
+
                 window.location.replace('/');
             }
         });

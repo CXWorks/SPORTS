@@ -24,9 +24,9 @@ $factory->define(SPORTS\User::class, function (Faker\Generator $faker) {
 
 $factory->define(SPORTS\Record::class,function (Faker\Generator $faker){
     return [
-        'email' => 'cxworks@qq.com',
+        'email' => '141250018@smail.nju.edu.cn',
         'minute' => $faker->numberBetween(10,120),
-        'sports' => $faker->country(),
+        'sports' => $faker->cou
         'word' => $faker->text(),
         'created_at' => $faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now')
     ];

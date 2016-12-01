@@ -12,6 +12,6 @@ class RecordsSeeder extends Seeder
     public function run()
     {
         //
-        factory(\SPORTS\Record::class,50)->create();
+        factory(\SPORTS\Record::class,2500)->create();
     }
 }

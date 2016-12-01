@@ -20,7 +20,7 @@ class ContestController extends Controller
         $this->middleware('auth');
     }
     public function create(){
-        $rank=round(Record::where('email',Auth::user()->email)->count()/3);
+        $rank=round(Record::where('email',Auth::user()->email)->count()/30);
         if ($rank<15){
             $contests=Contest::where('state','running')->orderBy('date','desc')->get();
             $joins=JoinContest::where('email',Auth::user()->email)->get();

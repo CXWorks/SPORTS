@@ -23,7 +23,7 @@ class SportsController extends Controller
         $email=Auth::user()->email;
         $records=Record::where('email',$email)->orderBy('created_at','desc')->get();
         $contests=JoinContest::where('email',$email)->get();
-        $rank=round(count($records)/3);
+        $rank=round(count($records)/30);
         return view(SportsController::$view_location,['_PAGE'=>'sports','username'=>Auth::user()->name,'records'=>$records,'contests'=>$contests,'rank'=>$rank]);
 
     }

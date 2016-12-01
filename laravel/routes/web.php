@@ -39,8 +39,8 @@ Route::post('/contest/modify','Contest\ContestController@modifyContest');
 Route::post('/contest/delete','Contest\ContestController@deleteContest');
 
 Auth::routes();
-Route::resource('records', 'RecordController',['only'=>[
-    'show','store','destroy'
+Route::resource('records', 'User\RecordController',['only'=>[
+    'show','store','destroy','index'
 ]]);
 
 

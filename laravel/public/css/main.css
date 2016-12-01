@@ -15168,6 +15168,7 @@ input {
 .main-nav-toggle {
     float: left;
     color: #fff;
+    background-image: url("../img/bg2.jpeg");
 }
 .main-nav-toggle i {
     font-size: 28px;
@@ -15262,6 +15263,7 @@ ul.main-menu > li > a,
     transition: all 0.3s ease-in-out;
     padding-right: 0;
     padding-left: 0;
+
 }
 .left-sidebar.minified {
     width: 40px;

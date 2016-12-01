@@ -84,7 +84,7 @@
                             @foreach($contests as $contest)
                                 <tr>
                                     <td style="color: black">{{$contest->contest_id}}</td>
-                                    <td style="color: black">{{$contest->contest_date->format('Y-m-d')}}</td>
+                                    <td style="color: black">{{$contest->contest_date}}</td>
                                     <td style="color: black">{{$contest->created_at->format('Y-m-d')}}</td>
                                 </tr>
                             @endforeach
