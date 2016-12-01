@@ -24,7 +24,7 @@ class DataController extends Controller
     }
 
     public function contestRecommend(){
-        $contests=Contest::get();
+        $contests=Contest::where('state','running')->get();
         return view('analyze/recommend',['_PAGE'=>'recommend','username'=>Auth::user()->name,'contests'=>$contests]);
     }
 }

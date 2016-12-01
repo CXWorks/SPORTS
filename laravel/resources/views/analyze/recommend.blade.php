@@ -61,6 +61,10 @@
                         <div id="map" class="col-md-12" style="height: 600px">
 
                         </div>
+                    </br>
+                        </br>
+                        </br>
+                        <div id="info" class="col-md-12"></div>
                     </div>
                 </div>
             </div>
@@ -68,23 +72,34 @@
             <script type="application/javascript">
                 var map = new BMap.Map("map");
                 map.centerAndZoom(new BMap.Point(116.309965, 40.058333), 12);
-                mker.addEventListener("onclick", function(e) {
-                    alert(e.target);
-                });
+
                 var geolocation = new BMap.Geolocation();
                 geolocation.getCurrentPosition(function(r){
                     if(this.getStatus() == BMAP_STATUS_SUCCESS){
                         var mker=new BMap.Marker(r.point);
                         map.panTo(r.point);
                         map.addOverlay(mker);
+                        mker.addEventListener("onclick", function(e) {
+                            $('#info')[0].innerHTML="您的位置";
+                        });
+
                     }
                     else {
                         alert('failed'+this.getStatus());
                     }
                 },{enableHighAccuracy: true});
-                var contests={{$contests}};
+                var contests={!! $contests !!};
                 contests.forEach(function (con) {
-
+                    var mker=new BMap.Marker(new BMap.Point(con.locationX,con.locationY));
+                    mker.addEventListener("onclick", function(e) {
+                        for(i=0;i<contests.length;i++){
+                            if(Math.abs(contests[i].locationX-e.point.lng)<0.1&&Math.abs(contests[i].locationY-e.point.lat)<0.1){
+                                $('#info')[0].innerHTML=contests[i].description;
+                                return ;
+                            }
+                        }
+                    });
+                    map.addOverlay(mker);
                 });
             </script>
         </div>
