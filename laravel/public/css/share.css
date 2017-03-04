@@ -1,0 +1,49 @@
+.share {
+    background-image: url(share.png);
+    background-repeat: no-repeat;
+    display: block;
+
+    white-space: nowrap;
+}
+
+.share-github {
+    width: 30px;
+    height: 30px;
+    background-position: -5px -5px;
+    white-space: nowrap;
+}
+
+.share-gmail {
+    width: 30px;
+    height: 30px;
+    background-position: -45px -5px;
+    white-space: nowrap;
+}
+
+.share-linkedin {
+    width: 30px;
+    height: 30px;
+    background-position: -5px -45px;
+    white-space: nowrap;
+}
+
+.share-stackoverflow {
+    width: 30px;
+    height: 30px;
+    background-position: -45px -45px;
+    white-space: nowrap;
+}
+
+.share-tumblr {
+    width: 30px;
+    height: 30px;
+    background-position: -85px -5px;
+    white-space: nowrap;
+}
+
+.share-twitter {
+    width: 30px;
+    height: 30px;
+    background-position: -85px -45px;
+    white-space: nowrap;
+}
