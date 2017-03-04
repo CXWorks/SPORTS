@@ -96,7 +96,6 @@
                         <div class="btn-group widget-header-toolbar">
                             <a href="#" title="Focus" class="btn-borderless btn-focus"><i class="fa fa-eye"></i></a>
                             <a href="#" title="Expand/Collapse" class="btn-borderless btn-toggle-expand"><i class="fa fa-chevron-up"></i></a>
-                            <a href="#" title="Remove" class="btn-borderless btn-remove"><i class="fa fa-times"></i></a>
                         </div>
                     </div>
                     <div class="widget-content" >
