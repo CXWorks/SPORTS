@@ -100,11 +100,13 @@
                     <div class="widget-content" >
                         <div class="row">
                             <div class="col-md-3">
-                        <h5>代号 {{$contest->id}}</h5>
-                       <h5>组织者 <a href="/info?email={{$contest->pub_email}}" ><strong>{{$contest->publisher}}</strong></a></h5>
-                        <h5>E-mail <a href="mailto:{{$contest->pub_email}}">{{$contest->pub_email}}</a></h5>
-                        <h5>日期 <strong>{{ Carbon\Carbon::parse($contest->date)->format('Y-M-d h:m') }}</strong></h5>
-                                <h5>参与人数 {{$contest->people}}</h5>
+                                <h5>代号 {{$contest->id}}</h5>
+                                <h5>组织者 <a href="/info?email={{$contest->pub_email}}" ><strong>{{$contest->publisher}}</strong></a></h5>
+                                <h5>E-mail <a href="mailto:{{$contest->pub_email}}">{{$contest->pub_email}}</a></h5>
+                                <h5>日期 <strong>{{ Carbon\Carbon::parse($contest->date)->format('Y-M-d h:m') }}</strong></h5>
+                                <h5>参与人数 {{$contest->people}}</h5><br>
+                                <h5>竞赛详情</h5>
+                                {!! $contest->description !!}
                             </div>
                             <div class="col-md-9">
                                 <div id="map{{$contest->id}}" style="height: 220px"></div>
@@ -135,8 +137,7 @@
                         </div>
                         </br>
                         </br>
-                        <h5>竞赛详情</h5>
-                        {!! $contest->description !!}
+
                         </br>
                         @if($username==$contest->publisher)
                             <button type="button" class="btn btn-success" onclick="finsihContest({{$contest->id}})">结束</button>
