@@ -85,13 +85,13 @@
 
             </div>
             <!-- /main-content -->
-            @foreach($contests as $contest)
             <div class="main-content">
+              <h3><i class="fa fa-group"></i>可加入的竞赛</h3> <em>- List of ongoing CONTESTs</em>
+              @foreach($contests as $contest)
                 <!--row example-->
                 <div><p><br/><br/></p></div>
                 <div class="widget widget-table">
                     <div class="widget-header" ng-controller="myFavorCtrl">
-                        <h3><i class="fa fa-group"></i>可加入的竞赛</h3> <em>- List of ongoing CONTESTs</em>
                         <div class="btn-group widget-header-toolbar">
                             <a href="#" title="Focus" class="btn-borderless btn-focus"><i class="fa fa-eye"></i></a>
                             <a href="#" title="Expand/Collapse" class="btn-borderless btn-toggle-expand"><i class="fa fa-chevron-up"></i></a>
@@ -100,14 +100,14 @@
                     <div class="widget-content" >
                         <div class="row">
                             <div class="col-md-3">
-                        <h5>ID {{$contest->id}}</h5>
-                       <h5>Organizer <a href="/info?email={{$contest->pub_email}}" ><strong>{{$contest->publisher}}</strong></a></h5>
+                        <h5>代号 {{$contest->id}}</h5>
+                       <h5>组织者 <a href="/info?email={{$contest->pub_email}}" ><strong>{{$contest->publisher}}</strong></a></h5>
                         <h5>E-mail <a href="mailto:{{$contest->pub_email}}">{{$contest->pub_email}}</a></h5>
-                        <h5>Date <strong>{{$contest->date}}</strong></h5>
-                                <h5>People {{$contest->people}}</h5>
+                        <h5>日期 <strong>{{ Carbon\Carbon::parse($contest->date)->format('Y-M-d h:m') }}</strong></h5>
+                                <h5>参与人数 {{$contest->people}}</h5>
                             </div>
                             <div class="col-md-9">
-                                <div id="map{{$contest->id}}" style="height: 300px"></div>
+                                <div id="map{{$contest->id}}" style="height: 220px"></div>
                                 <script type="application/javascript">
                                     var map{{$contest->id}} = new BMap.Map("map{{$contest->id}}");
                                     var point{{$contest->id}} = new BMap.Point({{$contest->locationX}},{{$contest->locationY}});
@@ -135,14 +135,15 @@
                         </div>
                         </br>
                         </br>
+                        <h5>竞赛详情</h5>
                         {!! $contest->description !!}
                         </br>
                         @if($username==$contest->publisher)
-                            <button type="button" class="btn btn-success" onclick="finsihContest({{$contest->id}})">Finish</button>
-                            <button type="button" class="btn btn-warning" onclick="window.location.href='/contest/modify?id={{$contest->id}}';">Modify</button>
-                            <button type="button" class="btn btn-danger" onclick="deleteContest({{$contest->id}})">Delete</button>
+                            <button type="button" class="btn btn-success" onclick="finsihContest({{$contest->id}})">结束</button>
+                            <button type="button" class="btn btn-warning" onclick="window.location.href='/contest/modify?id={{$contest->id}}';">修改</button>
+                            <button type="button" class="btn btn-danger" onclick="deleteContest({{$contest->id}})">删除</button>
                             @elseif($joins->where('contest_id',$contest->id)->isEmpty())
-                            <button type="button" class="btn btn-primary" onclick="joinContest({{$contest->id}})">Join</button>
+                            <button type="button" class="btn btn-primary" onclick="joinContest({{$contest->id}})">加入</button>
                             @endif
                     </div>
                 </div>
