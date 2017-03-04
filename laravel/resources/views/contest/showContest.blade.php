@@ -33,17 +33,18 @@
                         <table id="table_id" class="display" >
                             <thead>
                             <tr>
-                                <th style="color: black">contest_id</th>
-
-                                <th style="color: black">Date</th>
-                                <th style="color: black">JoinDate</th>
+                                <th style="color: black">竞赛代号</th>
+                                <th style="color: black">竞赛名称</th>
+                                <th style="color: black">举办日期</th>
+                                <th style="color: black">加入日期</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($joins as $join)
                                 <tr>
                                     <td style="color: black">{{$join->contest_id}}</td>
-                                    <td style="color: black">{{$join->contest_date}}</td>
+                                    <td style="color: black">{{$join->contest_name}}</td>
+                                    <td style="color: black">{{ Carbon\Carbon::parse($join->contest_date)->format('Y-M-d h:m') }}</td>
                                     <td style="color: black">{{$join->created_at}}</td>
                                 </tr>
                             @endforeach
@@ -51,7 +52,31 @@
                         </table>
                         <script type="application/javascript">
                             $('#table_id').DataTable({
-                                autoFill:true
+                                autoFill:true,
+                                language: {
+                                   "sProcessing": "处理中...",
+                                   "sLengthMenu": "显示 _MENU_ 项结果",
+                                   "sZeroRecords": "没有匹配结果",
+                                   "sInfo": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+                                   "sInfoEmpty": "显示第 0 至 0 项结果，共 0 项",
+                                   "sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+                                   "sInfoPostFix": "",
+                                   "sSearch": "搜索:",
+                                   "sUrl": "",
+                                   "sEmptyTable": "表中数据为空",
+                                   "sLoadingRecords": "载入中...",
+                                   "sInfoThousands": ",",
+                                   "oPaginate": {
+                                       "sFirst": "首页",
+                                       "sPrevious": "上页",
+                                       "sNext": "下页",
+                                       "sLast": "末页"
+                                   },
+                                   "oAria": {
+                                       "sSortAscending": ": 以升序排列此列",
+                                       "sSortDescending": ": 以降序排列此列"
+                                   }
+                               }
                             });
                         </script>
 
