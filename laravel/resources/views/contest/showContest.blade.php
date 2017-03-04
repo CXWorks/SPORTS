@@ -139,13 +139,15 @@
                         </br>
 
                         </br>
+                      
                         @if($username==$contest->publisher)
                             <button type="button" class="btn btn-success" onclick="finsihContest({{$contest->id}})">结束</button>
                             <button type="button" class="btn btn-warning" onclick="window.location.href='/contest/modify?id={{$contest->id}}';">修改</button>
                             <button type="button" class="btn btn-danger" onclick="deleteContest({{$contest->id}})">删除</button>
                             @elseif($joins->where('contest_id',$contest->id)->isEmpty())
                             <button type="button" class="btn btn-primary" onclick="joinContest({{$contest->id}})">加入</button>
-                            @endif
+                        @endif
+
                     </div>
                 </div>
                 <!-- END WIDGET TICKET TABLE -->

@@ -16,7 +16,6 @@
                     <div class="btn-group widget-header-toolbar">
                         <a href="#" title="Focus" class="btn-borderless btn-focus"><i class="fa fa-eye"></i></a>
                         <a href="#" title="Expand/Collapse" class="btn-borderless btn-toggle-expand"><i class="fa fa-chevron-up"></i></a>
-                        <a href="#" title="Remove" class="btn-borderless btn-remove"><i class="fa fa-times"></i></a>
                     </div>
                 </div>
                 <div class="row widget-content" >
@@ -49,15 +48,12 @@
                             <h3>地点</h3>
                             <div id="allmap" style="width: inherit;height: 400px"></div>
                         </div>
-
-
                 </div>
             </div>
 
 
 
             <div class="editor" id="editor">
-
             </div>
             <button type="submit" class="btn btn-primary" onclick="submitContest()">
                 发布
