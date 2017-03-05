@@ -15197,9 +15197,10 @@ ul.main-menu {
 }
 ul.main-menu > li a {
     display: block;
-    /*position: relative; changed by G*/
+    position: relative;
     /*position: fixed;*/
     padding: 10px 0 10px 15px;
+    width: 320px;
     color: #555;
     background-color: #ececec;
     border-top: 1px solid #dfdfdf;
