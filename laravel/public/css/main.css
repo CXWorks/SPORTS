@@ -15191,12 +15191,14 @@ input {
 
 /* main menu */
 ul.main-menu {
+    position: fixed;
     padding-left: 0;
     list-style-type: none;
 }
 ul.main-menu > li a {
     display: block;
-    position: relative;
+    /*position: relative; changed by G*/
+    /*position: fixed;*/
     padding: 10px 0 10px 15px;
     color: #555;
     background-color: #ececec;
@@ -21129,13 +21131,14 @@ ul.recent-file-list > li {
     display: block;
     top:18%;
     right:3%;
-    width: 55px;
-    height: 55px;   z-index:1000;
-    font-size: 0.1em;
+    width: 100px;
+    height: 50px;   z-index:1000;
+    font-size: 0.12em;
     /*font-weight: light;*/
     /*font-family: 'Trebuchet MS', sans-serif;*/
     /*text-transform: uppercase;*/
     text-align: center;
+
     /*line-height: 100px;*/
     /*letter-spacing: -1px;*/
     color: white;

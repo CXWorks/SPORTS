@@ -71,12 +71,18 @@
             <!-- END WIDGET TICKET TABLE -->
             <script type="application/javascript">
                 var map = new BMap.Map("map");
+
+                map.addControl(new BMap.NavigationControl());
+                map.addControl(new BMap.ScaleControl());
+                map.addControl(new BMap.OverviewMapControl());
+                map.addControl(new BMap.MapTypeControl());
                 map.centerAndZoom(new BMap.Point(116.309965, 40.058333), 12);
 
                 var geolocation = new BMap.Geolocation();
                 geolocation.getCurrentPosition(function(r){
                     if(this.getStatus() == BMAP_STATUS_SUCCESS){
-                        var mker=new BMap.Marker(r.point);
+                        var myIcon = new BMap.Icon("{{asset('/')}}img/location.png", new BMap.Size(23, 23));
+                        var mker=new BMap.Marker(r.point,{icon:myIcon});
                         map.panTo(r.point);
                         map.addOverlay(mker);
                         mker.addEventListener("onclick", function(e) {
@@ -95,6 +101,15 @@
                         for(i=0;i<contests.length;i++){
                             if(Math.abs(contests[i].locationX-e.point.lng)<0.1&&Math.abs(contests[i].locationY-e.point.lat)<0.1){
                                 $('#info')[0].innerHTML=contests[i].description;
+                                var opts = {
+                                    width : 250,     // 信息窗口宽度
+                                    height: 400,     // 信息窗口高度
+                                    title : "Hello"  // 信息窗口标题
+                                }
+
+                                var infoWindow = new BMap.InfoWindow('<div class="scrollbar-macosx" style="overflow-y: scroll;">'+contests[i].description+'</div>', opts);
+                                map.openInfoWindow(infoWindow, e.point);
+//                                $('.scrollbar-macosx').scrollbar();
                                 return ;
                             }
                         }

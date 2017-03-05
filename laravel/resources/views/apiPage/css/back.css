@@ -21120,11 +21120,12 @@ ul.recent-file-list > li {
     /*left: 50%;*/
     /*margin-left: -50px;*/
     /*margin-top: -50px;*/
+    /*old: 55px changed by G*/
     display: block;
     top:18%;
     right:3%;
-    width: 55px;
-    height: 55px;   z-index:1000;
+    width: 500px;
+    height: 100px;   z-index:1000;
     font-size: 0.1em;
     /*font-weight: light;*/
     /*font-family: 'Trebuchet MS', sans-serif;*/

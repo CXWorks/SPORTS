@@ -20,15 +20,16 @@
     <link href="{{asset('/')}}css/main.css" rel="stylesheet" type="text/css">
     <link href="{{asset('/')}}css/style-switcher.css" rel="stylesheet" type="text/css">
     <link href="{{asset('/')}}css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
-    <link href=" https://cdn.datatables.net/autofill/2.1.2/css/autoFill.dataTables.min.css" type="text/css">
+    <link href=" {{asset('/')}}css/autoFill.dataTables.min.css" type="text/css">
     @if($_PAGE=='editComment'||$_PAGE=='basic.modify'||$_PAGE=='createContest'||$_PAGE=='modifyContest')
         <link href="{{asset('/')}}css/wangEditor.css" rel="stylesheet" type="text/css">
     @endif
     <link href="{{asset('/')}}css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="{{asset('/')}}js/jquery-3.1.1.min.js"></script>
     <script src="{{asset('/')}}js/king-common.js"></script>
     <script src="{{asset('/')}}js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/autofill/2.1.2/js/dataTables.autoFill.min.js"></script>
+    <script src="{{asset('/')}}js/scrollbar.min.js"></script>
+    <script src="{{asset('/')}}js/dataTables.autoFill.min.js"></script>
     {{--<style type="text/css">--}}
     <script src="{{asset('/')}}js/bootstrap.min.js"></script>
     <script src="{{asset('/')}}js/bootstrap-datetimepicker.min.js"></script>

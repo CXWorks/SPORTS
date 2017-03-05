@@ -15,7 +15,7 @@
                         </div>
                         <div class="col-lg-7"></div>
                         <div class="col-lg-1 ">
-                            <a href="editComment" style="color: white; text-align: center"><span class='pulse-button'><h4>new!</h4></span></a>
+                            <a href="editComment" style="color: white; text-align: center"><span class='pulse-button'><h4>发布动态</h4></span></a>
                         </div>
                     </div>
 
@@ -24,7 +24,7 @@
 
                         <div class="main-header">
                             <h2>动态</h2>
-                            <em>other's thinking</em>
+                            <em>与大家一起分享你的健康生活～</em>
                         </div>
                         <div class="main-content">
                             <!--row example-->
@@ -32,7 +32,7 @@
                             <div><p><br/><br/></p></div>
                             <div class="widget widget-table">
                                 <div class="widget-header" ng-controller="myFavorCtrl">
-                                    <h3><i class="fa fa-group"></i>{!! $comment->email !!}</h3> <em>- List of concerned SPORTSs</em>
+                                    <h3><i class="fa fa-group"></i><a href="/info?email={{$comment->email}}">{{$comment->email}}</a></h3> <em>- {{$comment->created_at}}</em>
                                     <div class="btn-group widget-header-toolbar">
                                         <a href="#" title="Focus" class="btn-borderless btn-focus"><i class="fa fa-eye"></i></a>
                                         <a href="#" title="Expand/Collapse" class="btn-borderless btn-toggle-expand"><i class="fa fa-chevron-up"></i></a>

@@ -16,6 +16,8 @@ function finsihContest(id) {
     });
 }
 function deleteContest(id) {
+  var res=confirm("确定删除？？");
+  if(res==true){
     $.ajax({
         type: 'POST',
         url: '/contest/delete',
@@ -27,6 +29,8 @@ function deleteContest(id) {
             window.location.replace('showContest');
         }
     });
+  }
+
 }
 function joinContest(id) {
     $.ajax({

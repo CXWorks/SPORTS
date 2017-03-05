@@ -5,7 +5,7 @@
 function drawRecords() {
     var option = {
         title: {
-            text: 'Sports Reords'
+            text: '运动记录'
         },
         tooltip: {
             trigger: 'axis'
@@ -20,7 +20,7 @@ function drawRecords() {
         yAxis: [
 
     {
-        name : 'time length (mins)',
+        name : '运动时长 (mins)',
             type : 'value',
     }
         ],
@@ -39,7 +39,7 @@ function drawRecords() {
         }],
 
         series: {
-            name: 'Sports Records',
+            name: '运动记录',
             type: 'line',
             data: data.map(function (item) {
                 return item['minute'];
